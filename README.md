@@ -1,25 +1,85 @@
-# ReduxSimpleStarter
+# React-app
 
-Interested in learning [Redux](https://www.udemy.com/react-redux/)?
+Esta aplicación es un reproductor de videos de **YouTube**.
+Utiliza la API de YouTube para hacer busquedas y consultas de los videos.
 
-### Getting Started
+#### Herramientas
+* YouTube API
+* Bootstrap 4 (CDN)
 
-There are two methods for getting started with this repo.
 
-#### Familiar with Git?
-Checkout this repo, install dependencies, then start the gulp process with the following:
+#### Notas de detalles aprendidos
 
+* Function components vs Class components
+
+Para cuendo el componente no maneja estatos (state), se puede realizar componente tipo función debido a que su unica responsabilidad es
+renderizar HTML.
+
+```Javascript
+// Function component
+const ComponentName = (props) => {
+  return (
+    <h3> Some component </h3>
+  );
+}
+
+// Class component
+class SearchBar extends Component {
+  constructor(props){
+    super(props);
+    this.state = { key: 'value'} //initial state
+  }
+
+  render(){
+    return (
+      <h3>{this.state.key}</h3>
+    );
+  }
+}
 ```
-> git clone https://github.com/StephenGrider/ReduxSimpleStarter.git
-> cd ReduxSimpleStarter
-> npm install
-> npm start
+
+* ES6 syntax vs ES5 syntax
+
+Comparando un poco sintaxis de **ES6** contra **ES5**
+```Javascript
+//Functions
+// ES5
+var x = function (params) {}
+// ES6
+let x = (params) => {}
+
+//Asign values to JS objects (same name value and same name key)
+//ES5
+{ something: something}
+//ES6
+{ something }
+
+// String interpolation
+// ES5
+var y = 'thing'
+var x = 'some'+ y
+//ES6
+var y = 'thing'
+var x = `some${y}`
 ```
 
-#### Not Familiar with Git?
-Click [here](https://github.com/StephenGrider/ReactStarter/releases) then download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
+* React
+Para hacer cambios en un estado(state) presente en un componente padre desde un componente hijo(o descendiente)
+ es necesario pasar o el estado o la función por parametros, en caso de componentes clase se realiza en el constructor y en los componentes funciones se para como parametros:
 
-```
-> npm install
-> npm start
-```
+ ```Javascript
+ //Parent component
+ ...
+ someFunction(param){
+   this.setState(key: param);
+ }
+ ...
+ <ChildComponent onEventChange={someFunction} />
+
+ //ChildComponent
+ someOtherFunction(param){
+   this.props.onEventChange(param);
+ }
+ ...
+ <input onChange={event => someOtherFunction(event.target.value)}
+ ```
