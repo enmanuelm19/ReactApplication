@@ -1,25 +1,16 @@
-# ReduxSimpleStarter
+# Repositorio inicial
 
-Interested in learning [Redux](https://www.udemy.com/react-redux/)?
+Esqueleto inicial para trabajar con react-redux, con webpack y babel configurado.
 
-### Getting Started
-
-There are two methods for getting started with this repo.
-
-#### Familiar with Git?
-Checkout this repo, install dependencies, then start the gulp process with the following:
-
-```
-> git clone https://github.com/StephenGrider/ReduxSimpleStarter.git
-> cd ReduxSimpleStarter
-> npm install
-> npm start
-```
-
-#### Not Familiar with Git?
-Click [here](https://github.com/StephenGrider/ReactStarter/releases) then download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
+Para empezar es necesario instalar las dependencias y correr el servidor de webpack
 
 ```
 > npm install
 > npm start
 ```
+
+Este repositorio estara dividido en la seccion para React solo, sin redux y en combinación.
+
+* Ramas
+  * react-start
+  * react-app
